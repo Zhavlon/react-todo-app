@@ -1,0 +1,8 @@
+.todo_app {
+    margin: 2rem auto 0 auto;
+    max-width: 400px;
+}
+.search_panel {
+    justify-content: space-between;
+    margin-bottom: 15px;
+}

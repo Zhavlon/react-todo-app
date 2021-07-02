@@ -1,0 +1,13 @@
+.todo_item {
+    align-items: center;
+    justify-content: space-between;
+}
+.todo_item .btn {
+    width: 35px;
+    margin: 0 3px;
+}
+.todo_item_text {
+    margin-left: 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
