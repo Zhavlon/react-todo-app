@@ -1,8 +1,7 @@
 import React from "react";
 import './todo-item.css'
 
-const ToDoItem = ({todoProps}) => {
-  const {task, important} = todoProps;
+const ToDoItem = ({task, important, id, onToggleImportant, onToggleDelete}) => {
   const my_style = {
     color: important ? '#0095ff' : 'black',
     fontWeight: important ? 'bold': '400'
@@ -14,11 +13,15 @@ const ToDoItem = ({todoProps}) => {
         {task}
       </span>
       <div className='buttons'>
-        <button type="button" className="btn btn-sm btn-outline-danger">
+        <button type="button"
+                onClick={() => {onToggleDelete(id)}}
+                className="btn btn-sm btn-outline-danger">
         <i className="fa fa-trash-o"/>
       </button>
 
-      <button type="button" className="btn btn-sm btn-outline-success">
+      <button type="button"
+              onClick={() => {onToggleImportant(id)}}
+              className="btn btn-sm btn-outline-success">
         <i className="fa fa-exclamation"/>
       </button>
       </div>
