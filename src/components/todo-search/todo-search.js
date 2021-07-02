@@ -1,10 +1,28 @@
 import React from "react";
 import './todo-search.css'
 
-const ToDoSearch = () => {
-  return (
-      <input type="text" className='form-control search-input' placeholder='search'/>
-  )
+class ToDoSearch extends React.Component {
+  state = {
+    search: ''
+  }
+
+  setValue = (e) => {
+    this.setState({
+      search: e.target.value
+    })
+    this.props.onSearch(e.target.value)
+  }
+
+  render() {
+    return (
+      <input type="text"
+             onChange={this.setValue}
+             value={this.state.search}
+             className='form-control search-input'
+             placeholder='search'/>
+    )
+  }
 }
+
 
 export default ToDoSearch;
