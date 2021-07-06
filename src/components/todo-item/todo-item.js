@@ -6,7 +6,15 @@ const ToDoItem = ({task, important, id, onToggleImportant, onToggleDelete, done,
     color: important ? '#0095ff' : 'black',
     fontWeight: important ? 'bold' : '400',
     textDecoration: done ? 'line-through' : 'none',
-    fontSize: done ? '1.1em' : '1.4em'
+    fontSize: done ? '1.2em' : '1.3em',
+    fontStyle: done ? 'italic' : 'normal'
+  }
+
+  const makeShort = (task) => {
+    if(task.length > 16) {
+      return `${task.slice(0, 16)}...`
+    }
+    return task
   }
 
   return (
@@ -14,7 +22,7 @@ const ToDoItem = ({task, important, id, onToggleImportant, onToggleDelete, done,
       <span style={my_style}
             onClick={() => onToggleDone(id)}
             className='todo_item_text'>
-        {task}
+        {makeShort(task)}
       </span>
       <div className='buttons'>
         <button type="button"

@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+form .form-control {
+    width: 84%;
+}
+form .btn {
+    width: 15%;
+}
